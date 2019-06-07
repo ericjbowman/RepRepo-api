@@ -1,4 +1,4 @@
-class TunesController < ApplicationController
+class TunesController < OpenReadController
   before_action :set_tune, only: [:show, :update, :destroy]
 
   # GET /tunes
@@ -15,7 +15,7 @@ class TunesController < ApplicationController
 
   # POST /tunes
   def create
-    @tune = Tune.new(tune_params)
+    @tune = current_user.tunes.build(tune_params)
 
     if @tune.save
       render json: @tune, status: :created, location: @tune
@@ -39,13 +39,14 @@ class TunesController < ApplicationController
   end
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
-    def set_tune
-      @tune = Tune.find(params[:id])
-    end
+  def set_tune
+    @tune = current_user.tunes.find(params[:id])
+  end
 
     # Only allow a trusted parameter "white list" through.
-    def tune_params
-      params.require(:tune).permit(:title, :composer)
-    end
+  def tune_params
+    params.require(:tune).permit(:title, :composer, :user_id)
+  end
 end

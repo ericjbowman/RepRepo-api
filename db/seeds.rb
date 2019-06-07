@@ -9,3 +9,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+require 'csv'
+
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'RepList.csv'))
+puts csv_text
