@@ -35,7 +35,9 @@ class MasterTunesController < ApplicationController
 
   # DELETE /master_tunes/1
   def destroy
-    @master_tune.destroy
+    @master_tunes = MasterTune.all
+    @master_tunes.destroy
+
   end
 
   private
