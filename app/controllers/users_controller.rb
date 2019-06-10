@@ -47,9 +47,9 @@ class UsersController < OpenReadController
   end
 
   def index
-    @tunes = User.all
+    @users = User.all
 
-    render json: @tunes
+    render json: @users
   end
 
   private
