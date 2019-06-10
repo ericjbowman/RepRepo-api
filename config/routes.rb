@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :tunes, except: %i[new edit]
   # RESTful routes
   resources :examples, except: %i[new edit]
+  resources :users, except: %i[new edit]
 
   # Custom routes
   post '/sign-up' => 'users#signup'
