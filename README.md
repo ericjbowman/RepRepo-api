@@ -10,3 +10,12 @@ Entity diagram:
 
 users {email:string, password:string} -|--< tunes {title: string, composer: string}
 master_tunes {title: string, composer: string}
+
+Link to front-end repository:
+https://github.com/ericjbowman/RepRepo
+
+Api deployemnt:
+https://fast-fjord-28821.herokuapp.com
+
+Deployment:
+https://ericjbowman.github.io/RepRepo/

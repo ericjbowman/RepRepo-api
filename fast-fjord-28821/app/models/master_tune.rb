@@ -1,0 +1,2 @@
+class MasterTune < ApplicationRecord
+end
